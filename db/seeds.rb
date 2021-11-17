@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Task.create(
+    title: "Learn GraphQL", 
+    description: "", 
+    finished: false, 
+    assigned: "2021-12-01"
+)
+
+Task.create(
+    title: "Start project", 
+    description: "", 
+    finished: true, 
+    assigned: "2021-12-01"
+)
