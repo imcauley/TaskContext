@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_040239) do
+ActiveRecord::Schema.define(version: 2021_11_20_031409) do
 
   create_table "contexts", force: :cascade do |t|
     t.string "name"
     t.boolean "generated"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "task_contexts", force: :cascade do |t|
+    t.integer "task_id"
+    t.integer "context_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,4 +35,6 @@ ActiveRecord::Schema.define(version: 2021_11_10_040239) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "task_contexts", "contexts"
+  add_foreign_key "task_contexts", "tasks"
 end
