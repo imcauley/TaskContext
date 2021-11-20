@@ -18,3 +18,23 @@ Task.create(
     finished: true, 
     assigned: "2021-12-01"
 )
+
+Context.create(
+    name: "Home",
+    generated: false
+)
+
+Context.create(
+    name: "Work",
+    generated: false
+)
+
+TaskContext.create(
+    task_id: 1,
+    context_id: 1
+)
+
+TaskContext.create(
+    task_id: 1,
+    context_id: 2
+)
