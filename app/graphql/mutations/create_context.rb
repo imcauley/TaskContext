@@ -7,10 +7,7 @@ module Mutations
         type Types::ContextType
     
         def resolve(name: nil)
-            Context.create(
-                name: name,
-                generated: false
-            )
+            Context.where(name: name).where(generated: false).first_or_create
         end
     end
 end    
